@@ -16,10 +16,10 @@ all_ones:
 .section .text
 
 _start:
-	mov		$1, %rax      		# write
-	mov		$1, %rdi      		# file descriptor (stdout)
-	mov		$array, %rsi  		# array pointer
-	mov		(array_size), %rdx	# array size   
+	mov	$1, %rax      	    # write
+	mov	$1, %rdi      	    # file descriptor (stdout)
+	mov	$array, %rsi  	    # array pointer
+	mov	(array_size), %rdx  # array size   
 	syscall
 
 	movq    $array, %r8         # array start
@@ -43,13 +43,13 @@ loop:
 	jnz     loop                # continue if iterator not zero
 
 exit:
-	mov		$1, %rax      		# write
-	mov		$1, %rdi      		# file descriptor (stdout)
-	mov		$array, %rsi  		# array pointer
-	mov		(array_size), %rdx	# array size   
+	mov	$1, %rax      	    # write
+	mov	$1, %rdi      	    # file descriptor (stdout)
+	mov	$array, %rsi  	    # array pointer
+	mov	(array_size), %rdx  # array size   
 	syscall
 	
-	mov     $60, %rax			# exit
-	xor     %rdi, %rdi			# zero rdi
+	mov     $60, %rax	    # exit
+	xor     %rdi, %rdi	    # zero rdi
 	syscall
 	
